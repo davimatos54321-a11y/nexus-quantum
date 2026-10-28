@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="pt-BR" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Quantum AI Studio</title>
+    <title>Nexus Quantum AI Studio - Nano 01 Official Hub</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -49,7 +49,7 @@
                 </div>
                 <div>
                     <h1 class="font-bold text-lg tracking-tight bg-gradient-to-r from-white via-gray-200 to-emerald-400 bg-clip-text text-transparent">Nexus Quantum AI</h1>
-                    <p class="text-xs text-gray-400">Cloud-Native Hybrid Architecture Studio</p>
+                    <p class="text-xs text-gray-400">Nano 01 Official Hybrid Hub</p>
                 </div>
             </div>
             <div class="flex items-center space-x-3">
@@ -66,13 +66,18 @@
 
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
 
+        <!-- LATERAL DE MÓDULOS -->
         <div class="lg:col-span-4 flex flex-col space-y-6">
             <div class="bg-nexus-card border border-nexus-border rounded-2xl p-5 shadow-xl">
                 <h2 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4 flex items-center">
                     <i class="fa-solid fa-layer-group mr-2 text-emerald-400"></i> Workspace Modules
                 </h2>
                 <div class="space-y-2">
-                    <button onclick="switchTab('quantum')" id="tab-btn-quantum" class="w-full flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium transition-all">
+                    <button onclick="switchTab('avatar')" id="tab-btn-avatar" class="w-full flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium transition-all">
+                        <span class="flex items-center"><i class="fa-solid fa-microphone-lines w-6"></i> Central de Voz & Radar</span>
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <button onclick="switchTab('quantum')" id="tab-btn-quantum" class="w-full flex items-center justify-between p-3 rounded-xl bg-gray-800/50 border border-transparent hover:bg-gray-800 text-gray-300 font-medium transition-all">
                         <span class="flex items-center"><i class="fa-solid fa-microchip w-6"></i> Qiskit Quantum Simulator</span>
                         <i class="fa-solid fa-chevron-right text-xs"></i>
                     </button>
@@ -88,9 +93,65 @@
             </div>
         </div>
 
+        <!-- CONTEÚDO PRINCIPAL -->
         <div class="lg:col-span-8 flex flex-col space-y-6">
+
+            <!-- TAB 0: CENTRAL DE VOZ DO AVATAR COM INTELIGÊNCIA REGIONAL E NOTIFICAÇÕES -->
+            <div id="tab-content-avatar" class="space-y-6">
+                <div class="bg-nexus-card border border-nexus-border rounded-2xl p-6 shadow-xl space-y-6">
+                    <div class="flex items-center justify-between pb-4 border-b border-gray-800">
+                        <h2 class="text-xl font-bold text-white flex items-center">
+                            <i class="fa-solid fa-earth-americas mr-3 text-emerald-400 animate-pulse"></i> Global Radar & Host: Nano 01
+                        </h2>
+                        <span id="region-badge" class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/25">Detectando Região...</span>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center bg-gray-950 border border-gray-800 rounded-2xl p-6">
+                        <!-- Avatar Holográfico -->
+                        <div class="lg:col-span-5 flex flex-col items-center justify-center space-y-3">
+                            <div class="relative w-full h-64 rounded-2xl overflow-hidden border-2 border-emerald-500/60 shadow-2xl shadow-emerald-950/80 bg-gray-900 group">
+                                <img src="1000217500.jpg" alt="Nano 01 AI Host" class="w-full h-full object-cover object-center filter contrast-125 brightness-95 group-hover:scale-105 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-[linear-gradient(rgba(16,185,129,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] pointer-events-none opacity-40"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-80"></div>
+                                <div id="audio-wave" class="absolute inset-x-0 bottom-0 h-1.5 bg-emerald-400 opacity-0 transition-opacity shadow-[0_0_15px_#10b981]"></div>
+                                <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+                                    <span class="text-[10px] font-mono tracking-widest text-emerald-300 bg-gray-950/90 px-2.5 py-1 rounded border border-emerald-500/40">
+                                        <i class="fa-solid fa-circle text-[8px] text-emerald-400 animate-ping mr-1"></i> SMART SYNC ACTIVE
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Caixa de Diálogo, Faixas em Alta e Notificações -->
+                        <div class="lg:col-span-7 space-y-4">
+                            <div class="bg-gray-900 border border-gray-800 rounded-xl p-4 text-sm text-gray-200 code-font shadow-inner">
+                                <p id="avatar-dialogue" class="text-emerald-400 leading-relaxed">
+                                    <span class="animate-pulse">Analisando tendências globais de streaming...</span>
+                                </p>
+                            </div>
+                            
+                            <!-- Vitrine Dinâmica de Faixas Recomendadas por Região -->
+                            <div id="recommended-tracks" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <!-- Preenchido dinamicamente via Script -->
+                            </div>
+
+                            <div class="flex flex-col sm:flex-row gap-2 pt-2">
+                                <button onclick="startVoiceRecognition()" class="flex-1 p-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-xs shadow-lg transition-all flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-microphone"></i>
+                                    <span>Falar com o Nano 01</span>
+                                </button>
+                                <button onclick="requestNotificationPermission()" class="p-3 rounded-xl bg-gray-800 hover:bg-gray-700 border border-emerald-500/30 text-xs text-emerald-400 font-medium transition-all flex items-center justify-center space-x-2">
+                                    <i class="fa-solid fa-bell animate-bounce"></i>
+                                    <span>Ativar Alertas</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- TAB 1: QUANTUM -->
-            <div id="tab-content-quantum" class="space-y-6">
+            <div id="tab-content-quantum" class="space-y-6 hidden">
                 <div class="bg-nexus-card border border-nexus-border rounded-2xl p-6 shadow-xl">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-gray-800 gap-4">
                         <div>
@@ -172,10 +233,12 @@
     </main>
 
     <script>
+        // Função de alternar abas
         function switchTab(tabName) {
-            ['quantum', 'ai', 'deploy'].forEach(t => {
+            ['avatar', 'quantum', 'ai', 'deploy'].forEach(t => {
                 const content = document.getElementById(`tab-content-${t}`);
                 const btn = document.getElementById(`tab-btn-${t}`);
+                if (!content || !btn) return;
                 if (t === tabName) {
                     content.classList.remove('hidden');
                     btn.className = "w-full flex items-center justify-between p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium transition-all";
@@ -185,6 +248,131 @@
                 }
             });
         }
+
+        // --- SISTEMA INTELIGENTE REGIONAL E VOZ DO AVATAR ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            const regionBadge = document.getElementById('region-badge');
+            const dialogueEl = document.getElementById('avatar-dialogue');
+            const tracksContainer = document.getElementById('recommended-tracks');
+
+            let welcomeMessage = "";
+            let tracksHtml = "";
+
+            if (userLang.startsWith('pt')) {
+                regionBadge.innerText = "Região: Brasil (LATAM)";
+                welcomeMessage = "Olá, eu sou o Nano 01 Produções. Detectei seu acesso no Brasil. Qual música você gostaria de ouvir?";
+                tracksHtml = `
+                    <button onclick="openTrack('echoes')" class="p-3 rounded-xl bg-gray-800 hover:bg-emerald-600/20 border border-gray-700 text-left transition-all">
+                        <div class="text-xs font-bold text-white flex items-center justify-between"><span>Echoes of the Street</span><i class="fa-solid fa-fire text-emerald-400"></i></div>
+                        <div class="text-[10px] text-gray-400">Dark Trap // #1 em alta</div>
+                    </button>
+                    <button onclick="openTrack('global')" class="p-3 rounded-xl bg-gray-800 hover:bg-emerald-600/20 border border-gray-700 text-left transition-all">
+                        <div class="text-xs font-bold text-white flex items-center justify-between"><span>Projeto Janus Edition</span><i class="fa-solid fa-globe text-emerald-400"></i></div>
+                        <div class="text-[10px] text-gray-400">Cinematic // Underground</div>
+                    </button>
+                `;
+            } else {
+                regionBadge.innerText = "Region: International (Global)";
+                welcomeMessage = "Hello, I am Nano 01 Productions. Global telemetry detected. What track would you like to listen to?";
+                tracksHtml = `
+                    <button onclick="openTrack('echoes')" class="p-3 rounded-xl bg-gray-800 hover:bg-emerald-600/20 border border-gray-700 text-left transition-all">
+                        <div class="text-xs font-bold text-white flex items-center justify-between"><span>Echoes of the Street (English Mix)</span><i class="fa-solid fa-fire text-emerald-400"></i></div>
+                        <div class="text-[10px] text-gray-400">Global Dark Trap // Trending</div>
+                    </button>
+                    <button onclick="openTrack('global')" class="p-3 rounded-xl bg-gray-800 hover:bg-emerald-600/20 border border-gray-700 text-left transition-all">
+                        <div class="text-xs font-bold text-white flex items-center justify-between"><span>Cinematic Soundscapes</span><i class="fa-solid fa-globe text-emerald-400"></i></div>
+                        <div class="text-[10px] text-gray-400">Instrumental // High Demand</div>
+                    </button>
+                `;
+            }
+
+            if(dialogueEl) dialogueEl.innerText = welcomeMessage;
+            if(tracksContainer) tracksContainer.innerHTML = tracksHtml;
+            
+            setTimeout(() => {
+                speakText(welcomeMessage);
+            }, 1000);
+        });
+
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = navigator.language.startsWith('pt') ? 'pt-BR' : 'en-US';
+                utterance.rate = 1.0;
+                utterance.pitch = 0.9;
+
+                const wave = document.getElementById('audio-wave');
+                utterance.onstart = () => { if(wave) wave.classList.add('opacity-100', 'animate-pulse'); };
+                utterance.onend = () => { if(wave) wave.classList.remove('opacity-100', 'animate-pulse'); };
+
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function startVoiceRecognition() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const dialogueEl = document.getElementById('avatar-dialogue');
+
+            if (!SpeechRecognition) {
+                alert("Seu navegador não suporta reconhecimento de voz. Tente usar o Google Chrome.");
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = navigator.language.startsWith('pt') ? 'pt-BR' : 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = () => {
+                dialogueEl.innerHTML = '<span class="text-yellow-400 animate-pulse">Ouvindo sua voz... Diga o que deseja ouvir.</span>';
+            };
+
+            recognition.onresult = (event) => {
+                const speechResult = event.results[0][0].transcript.toLowerCase();
+                dialogueEl.innerHTML = `Comando recebido: "<span class="text-white">${speechResult}</span>"`;
+                
+                const response = "Perfeito. Redirecionando para o ecossistema oficial do Nano 01.";
+                speakText(response);
+                setTimeout(() => {
+                    window.open('https://distrokid.com', '_blank');
+                }, 1500);
+            };
+
+            recognition.onerror = () => {
+                dialogueEl.innerText = "Não consegui capturar o áudio. Tente novamente.";
+            };
+
+            recognition.start();
+        }
+
+        // --- SISTEMA DE PERMISSÃO DE NOTIFICAÇÕES ---
+        function requestNotificationPermission() {
+            if (!("Notification" in window)) {
+                alert("Este navegador não suporta notificações.");
+                return;
+            }
+
+            Notification.requestPermission().then((permission) => {
+                if (permission === "granted") {
+                    speakText("Permissão concedida. Você será avisado assim que o próximo lançamento estiver no ar.");
+                    new Notification("Nano 01 // Oficial", {
+                        body: "Inscrição confirmada! Você receberá alertas dos próximos beats e faixas.",
+                        icon: "1000217500.jpg"
+                    });
+                } else {
+                    speakText("Permissão de notificação negada.");
+                }
+            });
+        }
+
+        function openTrack(type) {
+            speakText("Carregando plataforma de streaming.");
+            window.open('https://distrokid.com', '_blank');
+        }
+
+        // --- SISTEMAS DE SUPORTE (QUANTUM & AI) ---
         function runQuantumSimulation() {
             const outputEl = document.getElementById('quantum-output');
             const statusEl = document.getElementById('quantum-status');
@@ -195,6 +383,7 @@
                 outputEl.innerHTML = '<pre class="text-emerald-400 text-left">=== QISKIT SIMULATION REPORT ===\nCounts: {\'000\': 512, \'111\': 512}\nGHZ Entangled State Verified Successfully (100% Fidelity).</pre>';
             }, 800);
         }
+
         function sendChatMessage() {
             const input = document.getElementById('chat-input');
             const chat = document.getElementById('chat-messages');
@@ -202,10 +391,11 @@
             chat.innerHTML += `<div class="text-right"><span class="inline-block bg-emerald-600 text-white rounded-2xl p-3 text-sm">${input.value}</span></div>`;
             input.value = '';
             setTimeout(() => {
-                chat.innerHTML += `<div><span class="inline-block bg-gray-800 text-gray-200 rounded-2xl p-3 text-sm">Com essa arquitetura web moderna, sua aplicação roda instantaneamente e sem erros de compilação!</span></div>`;
+                chat.innerHTML += `<div><span class="inline-block bg-gray-800 text-gray-200 rounded-2xl p-3 text-sm">Com essa arquitetura web moderna, sua aplicação roda instantaneamente!</span></div>`;
                 chat.scrollTop = chat.scrollHeight;
             }, 500);
         }
+
         function openSettingsModal() { alert("Configurações salvas automaticamente na nuvem."); }
     </script>
 </body>
